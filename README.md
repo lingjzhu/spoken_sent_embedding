@@ -9,7 +9,8 @@ Inducing semantic representations directly from speech signals is a highly chall
 - Pretrained checkpoints
 - Data
   - Common Voce Spoken Sentence Similarities
-  - [Spoken STS](https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:237533)
+    Coming soon.
+  - [Spoken STS](https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:237533)  
     If you use Spoken STS dataset, please cite the [Interspeech paper by Merkx et al.](https://www.isca-speech.org/archive/interspeech_2021/merkx21_interspeech.html).
     ```
     @inproceedings{merkx21_interspeech,
