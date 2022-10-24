@@ -8,6 +8,19 @@ Inducing semantic representations directly from speech signals is a highly chall
 - Usage
 - Pretrained checkpoints
 - Data
+  - Common Voce Spoken Sentence Similarities
+  - [Spoken STS](https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:237533)
+    If you use Spoken STS dataset, please cite the following paper.
+    ```
+    @inproceedings{merkx21_interspeech,
+  author={Danny Merkx and Stefan L. Frank and Mirjam Ernestus},
+  title={{Semantic Sentence Similarity: Size does not Always Matter}},
+  year=2021,
+  booktitle={Proc. Interspeech 2021},
+  pages={4393--4397},
+  doi={10.21437/Interspeech.2021-1464}
+}
+    ```
 - Citation
 - License
 - References
