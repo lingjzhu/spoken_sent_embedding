@@ -10,3 +10,10 @@ Inducing semantic representations directly from speech signals is a highly chall
 - Data
 - Citation
 - License
+- References
+  Some of our scripts are based on the following implementations. 
+  - [Tramsformers](https://github.com/huggingface/transformers)
+  - [textlesslib](https://github.com/facebookresearch/textlesslib)
+  - [SimCSE](https://github.com/princeton-nlp/SimCSE)
+  - [sentence-transformer](https://www.sbert.net/)
+  - [SentencePiece](https://github.com/google/sentencepiece)
