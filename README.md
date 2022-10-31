@@ -42,7 +42,15 @@ Inducing semantic representations directly from speech signals is a highly chall
     ```
 
 - Citation
-- License
+  For now, you can cite this paper as:
+   ```
+   @article{zhu2022bootstrapping,
+        title={Bootstrapping meaning through listening: Unsupervised learning of spoken sentence embeddings},
+        author={Zhu, Jian and Tian, Zuoyu and Liu, Yadong and Zhang, Cong and Lo, Chia-wen},
+        journal={arXiv preprint arXiv:2210.12857},
+        year={2022}
+      }
+   ```
 - References
   Some of our scripts are based on the following implementations. 
   - [Transformers](https://github.com/huggingface/transformers)
