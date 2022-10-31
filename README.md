@@ -9,18 +9,16 @@ Inducing semantic representations directly from speech signals is a highly chall
 - Pretrained checkpoints
 - Data
   - **Common Voce Spoken Sentence Similarities**  
-    You can directly load the dataset from HuggingFace hub via the following code.  
-    - [Dev set](https://huggingface.co/datasets/charsiu/Common_voice_sentence_similarity_dev)
+    You can directly load the dataset from [our HuggingFace hub](https://huggingface.co/datasets/charsiu/Common_voice_sentence_similarity) via the following code. Only average semantic similarity rarings are including in the dataset object. However, we also provide all individual ratings from all four annotators in the same repositry ([dev_ratings.csv](https://huggingface.co/datasets/charsiu/Common_voice_sentence_similarity/blob/main/dev_ratings.tsv) and [test_ratings.csv](https://huggingface.co/datasets/charsiu/Common_voice_sentence_similarity/blob/main/test_ratings.tsv)). 
     ```
     from datasets import load_dataset
 
-    dataset = load_dataset("charsiu/Common_voice_sentence_similarity_dev")
-    ```
-    - [Test set](https://huggingface.co/datasets/charsiu/Common_voice_sentence_similarity_test)  
-    ```
-    from datasets import load_dataset
-
-    dataset = load_dataset("charsiu/Common_voice_sentence_similarity_test")
+    dataset = load_dataset("charsiu/Common_voice_sentence_similarity")
+    
+    # dev data
+    dataset['dev']
+    # test data
+    dataset['test']
     ```
   - **Spoken STS**  
     Spoken STS can be accessed [here](https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:237533). If you use the Spoken STS dataset, please cite the [Interspeech paper by Merkx et al.](https://www.isca-speech.org/archive/interspeech_2021/merkx21_interspeech.html).
