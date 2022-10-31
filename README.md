@@ -9,6 +9,7 @@ Inducing semantic representations directly from speech signals is a highly chall
 - Pretrained checkpoints
 - Data
   - Common Voce Spoken Sentence Similarities  
+    You can directly load the datasets from HuggingFace hub.  
     - [Dev set](https://huggingface.co/datasets/charsiu/Common_voice_sentence_similarity_dev)
     ```
     from datasets import load_dataset
