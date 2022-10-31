@@ -41,7 +41,7 @@ Inducing semantic representations directly from speech signals is a highly chall
 
     ```
 
-- Citation
+- Citation  
   For now, you can cite this paper as:
    ```
    @article{zhu2022bootstrapping,
