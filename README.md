@@ -8,8 +8,19 @@ Inducing semantic representations directly from speech signals is a highly chall
 - Usage
 - Pretrained checkpoints
 - Data
-  - Common Voce Spoken Sentence Similarities
-    Coming soon.
+  - Common Voce Spoken Sentence Similarities  
+    Dev set
+    ```
+    from datasets import load_dataset
+
+    dataset = load_dataset("charsiu/Common_voice_sentence_similarity_dev")
+    ```
+    Test set  
+    ```
+    from datasets import load_dataset
+
+    dataset = load_dataset("charsiu/Common_voice_sentence_similarity_test")
+    ```
   - [Spoken STS](https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:237533)  
     If you use Spoken STS dataset, please cite the [Interspeech paper by Merkx et al.](https://www.isca-speech.org/archive/interspeech_2021/merkx21_interspeech.html).
     ```
