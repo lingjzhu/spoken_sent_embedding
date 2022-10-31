@@ -9,13 +9,13 @@ Inducing semantic representations directly from speech signals is a highly chall
 - Pretrained checkpoints
 - Data
   - Common Voce Spoken Sentence Similarities  
-    Dev set
+    - [Dev set](https://huggingface.co/datasets/charsiu/Common_voice_sentence_similarity_dev)
     ```
     from datasets import load_dataset
 
     dataset = load_dataset("charsiu/Common_voice_sentence_similarity_dev")
     ```
-    Test set  
+    - [Test set](https://huggingface.co/datasets/charsiu/Common_voice_sentence_similarity_test)  
     ```
     from datasets import load_dataset
 
