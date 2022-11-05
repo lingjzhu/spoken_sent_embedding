@@ -8,7 +8,9 @@ Inducing semantic representations directly from speech signals is a highly chall
 ### Usage
 ### Pretrained checkpoints  
   Selected pretrained models can be found [here](https://huggingface.co/charsiu).  
-  
+
+### Pretrained tokenizers for hidden units
+
 ### Data  
 
 #### Common Voice Spoken Sentence Similarities  
