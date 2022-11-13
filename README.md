@@ -6,6 +6,9 @@ Inducing semantic representations directly from speech signals is a highly chall
 
 
 ### Usage
+
+Coming soon.
+
 ### Pretrained checkpoints  
   Selected pretrained models can be found [here](https://huggingface.co/charsiu).  
 
