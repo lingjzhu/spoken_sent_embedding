@@ -11,7 +11,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from transformers import Wav2Vec2CTCTokenizer,Wav2Vec2FeatureExtractor,Wav2Vec2Processor,Wav2Vec2Config, AutoModel
-from SpeechEncoder import Wav2Vec2SAP, SentWav2Vec2
+from SentHuBERT import SentHuBERT, SentHuBERT_CLS
 from scipy.stats import pearsonr,spearmanr
 import numpy as np
 from tqdm import tqdm
