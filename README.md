@@ -135,7 +135,7 @@ doi={10.21437/Interspeech.2021-1464}
    @article{zhu2022bootstrapping,
         title={Bootstrapping meaning through listening: Unsupervised learning of spoken sentence embeddings},
         author={Zhu, Jian and Tian, Zuoyu and Liu, Yadong and Zhang, Cong and Lo, Chia-wen},
-        journal={arXiv preprint arXiv:2210.12857},
+        journal={Findings of the Association for Computational Linguistics: EMNLP 2022},
         year={2022}
       }
    ```
