@@ -16,7 +16,7 @@ dataset = load_dataset("charsiu/Common_voice_sentence_similarity")
 
 dataset['dev']
 
-# load preprocessor
+# load audio preprocessor
 speech_tokenizer = Wav2Vec2CTCTokenizer.from_pretrained('facebook/wav2vec2-base-960h')
 feature_extractor = Wav2Vec2FeatureExtractor(feature_size=1, sampling_rate=16000, padding_value=0.0, do_normalize=True, return_attention_mask=False)
 processor = Wav2Vec2Processor(feature_extractor=feature_extractor, tokenizer=speech_tokenizer)
@@ -31,6 +31,7 @@ from WavEmbed import WavEmbedModel
 model = WavEmbedModel.from_pretrained("charsiu/WavEmbed_100")
 model.eval()
 
+# calculate the semantic similarity between two speech utterance using WavEmbed
 with torch.no_grad():
     emb_a = model(speech_a).encoder_last_hidden_state
     emb_b = model(speech_b).encoder_last_hidden_state
@@ -45,6 +46,7 @@ from SentHuBERT import SentHuBERT
 model = SentHuBERT.from_pretrained('charsiu/S-HuBERT-from-simcse-sup-roberta')
 model.eval()
 
+# calculate the semantic similarity between two speech utterance using S-HuBERT
 with torch.no_grad():
     emb_a = model(speech_a).last_hidden_state
     emb_b = model(speech_b).last_hidden_state
@@ -53,6 +55,7 @@ similarity = F.cosine_similarity(emb_a,emb_b,dim=-1)
 ```
 
 #### Hidden unit models
+
 ```
 #Load a pretrained BERT model trained on hidden units
 
@@ -68,6 +71,9 @@ from TSDAE import EncoderDecoderModel
 
 model = EncoderDecoderModel.from_pretrained('charsiu/TSDAE_hidden_units_HuBert100')
 ```
+
+#### Training
+See scripts in [src/](https://github.com/lingjzhu/spoken_sent_embedding/tree/main/src) for details.
 
 ### Pretrained checkpoints  
   Selected pretrained models can be found [here](https://huggingface.co/charsiu).  
