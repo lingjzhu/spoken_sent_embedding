@@ -198,7 +198,7 @@ class SpeechUnitDataCollatorWithPadding:
     
     
     
-def train_tsdae(model,train_loader, dev_loader, args):
+def train(model,train_loader, dev_loader, args):
     
     if not os.path.exists(args.out_dir):
         os.mkdir(args.out_dir)
@@ -345,7 +345,7 @@ if __name__ == "__main__":
     dev_loader = DataLoader(dev_dataset,batch_size=1,collate_fn=eval_collator)
 
 
-    model = SpeechEncoderDecoderModel.from_encoder_decoder_pretrained(args.speech_model, args.pretrained_model)
+    model = WavEmbedModel.from_encoder_decoder_pretrained(args.speech_model, args.pretrained_model)
     
     if re.search('gpt2',args.tokenizer):
         model.config.decoder_start_token_id = tokenizer.bos_token_id
@@ -354,4 +354,4 @@ if __name__ == "__main__":
     model.config.pad_token_id = tokenizer.pad_token_id
     model.config.vocab_size = model.config.decoder.vocab_size
     
-    train_tsdae(model,train_loader, dev_loader, args)
+    train(model,train_loader, dev_loader, args)
