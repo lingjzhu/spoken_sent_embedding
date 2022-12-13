@@ -6,34 +6,46 @@ Inducing semantic representations directly from speech signals is a highly chall
 
 
 ### Usage
-Load a pretrained WavEmbed model
+#### Speech models
 ```
+# load dataset
+from datasets import load_dataset
+
+dataset = load_dataset("charsiu/Common_voice_sentence_similarity")
+
+# dev data
+dataset['dev']
+
+# Load a pretrained WavEmbed model
+
 from WavEmbed import WavEmbedModel
 
 model = WavEmbedModel.from_pretrained("charsiu/WavEmbed_100")
 
-```
 
-Load a pretrained S-HuBERT model
-```
+
+# Load a pretrained S-HuBERT model
+
 from SentHuBERT import SentHuBERT
 
 model = SentHuBERT.from_pretrained('charsiu/S-HuBERT-from-simcse-sup-roberta')
 ```
 
-Load a pretrained BERT model trained on hidden units
+#### Hidden unit models
 ```
+#Load a pretrained BERT model trained on hidden units
+
 from transformers import AutoModelForMaskedLM
 
 model = AutoModelForMaskedLM.from_pretrained("charsiu/Bert_base_hidden_unit_HuBERT100C")
-```
 
 
-Load a pretrained TADAE model trained on hidden units
-```
+
+# Load a pretrained TADAE model trained on hidden units
+
 from TSDAE import EncoderDecoderModel
 
- model = EncoderDecoderModel.from_pretrained('charsiu/TSDAE_hidden_units_HuBert100')
+model = EncoderDecoderModel.from_pretrained('charsiu/TSDAE_hidden_units_HuBert100')
 ```
 
 ### Pretrained checkpoints  
