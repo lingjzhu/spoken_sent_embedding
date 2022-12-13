@@ -18,7 +18,7 @@ from tqdm import tqdm
 from data_utils import EvalDataCollatorWithPadding,STSEvalDataCollatorWithPadding
 import wandb
 
-from acousticTSDAE import SpeechEncoderDecoderModel
+from WavEmbed import WavEmbedModel
 
 
 
@@ -138,12 +138,12 @@ if __name__ == "__main__":
         wandb.run.name = args.run_name
     
     if args.encoder_decoder:
-        model = SpeechEncoderDecoderModel.from_pretrained(args.pretrained_model)
+        model = WavEmbedModel.from_pretrained(args.pretrained_model)
     else:
         if args.pooling == 'self-attention':
-            model = Wav2Vec2SAP.from_pretrained(args.pretrained_model)
+            model = SentHuBERT.from_pretrained(args.pretrained_model)
         elif args.pooling == 'cls':
-            model = SentWav2Vec2.from_pretrained(args.pretrained_model)
+            model = SentHuBERT_CLS.from_pretrained(args.pretrained_model)
         elif args.pooling == 'mean':
             model = AutoModel.from_pretrained(args.pretrained_model)
         else:
