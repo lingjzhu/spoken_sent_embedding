@@ -6,7 +6,7 @@ Inducing semantic representations directly from speech signals is a highly chall
 
 
 ### Usage
-Load pretrained models
+Load a pretrained WavEmbed model
 ```
 from WavEmbed import WavEmbedModel
 
@@ -14,10 +14,47 @@ model = WavEmbedModel.from_pretrained("charsiu/WavEmbed_100")
 
 ```
 
+Load a pretrained S-HuBERT model
+```
+from SentHuBERT import SentHuBERT
+
+model = SentHuBERT.from_pretrained('charsiu/S-HuBERT-from-simcse-sup-roberta')
+```
+
+Load a pretrained BERT model trained on hidden units
+```
+from transformers import AutoModelForMaskedLM
+
+model = AutoModelForMaskedLM.from_pretrained("charsiu/Bert_base_hidden_unit_HuBERT100C")
+```
+
+
+Load a pretrained TADAE model trained on hidden units
+```
+from TSDAE import EncoderDecoderModel
+
+ model = EncoderDecoderModel.from_pretrained('charsiu/TSDAE_hidden_units_HuBert100')
+```
+
 ### Pretrained checkpoints  
   Selected pretrained models can be found [here](https://huggingface.co/charsiu).  
 
 ### Pretrained tokenizers for hidden units
+Pretrained tokenizers can be found in [tokenizers/](https://github.com/lingjzhu/spoken_sent_embedding/tree/main/tokenizers)
+
+```
+from transformers import AutoTokenizer
+
+tokenizer = AutoTokenizer.from_pretrained('tokenizers/tokenizers-50') 
+# Other pretrained hidden unit tokenizers: 'tokenizers/tokenizers-100', 'tokenizers/tokenizers-200' 
+
+```
+
+```
+import sentencepiece as spm
+
+spm_tokenizer = spm.SentencePieceProcessor(model_file='hubert-base-ls960-100_8000.model')
+```
 
 ### Data  
 
