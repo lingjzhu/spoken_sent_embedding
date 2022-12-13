@@ -9,26 +9,47 @@ Inducing semantic representations directly from speech signals is a highly chall
 #### Speech models
 ```
 # load dataset
+import torch.nn.funtional as F
 from datasets import load_dataset
 
 dataset = load_dataset("charsiu/Common_voice_sentence_similarity")
 
-# dev data
 dataset['dev']
+
+# load preprocessor
+speech_tokenizer = Wav2Vec2CTCTokenizer.from_pretrained('facebook/wav2vec2-base-960h')
+feature_extractor = Wav2Vec2FeatureExtractor(feature_size=1, sampling_rate=16000, padding_value=0.0, do_normalize=True, return_attention_mask=False)
+processor = Wav2Vec2Processor(feature_extractor=feature_extractor, tokenizer=speech_tokenizer)
+
+speech_a = processor(dataset['dev'][0]["audio_a"], sampling_rate=16000,return_tensors='pt').input_values
+speech_b = processor(dataset['dev'][0]["audio_b"], sampling_rate=16000,return_tensors='pt').input_values
 
 # Load a pretrained WavEmbed model
 
 from WavEmbed import WavEmbedModel
 
 model = WavEmbedModel.from_pretrained("charsiu/WavEmbed_100")
+model.eval()
 
+with torch.no_grad():
+    emb_a = model(speech_a).encoder_last_hidden_state
+    emb_b = model(speech_b).encoder_last_hidden_state
 
+similarity = F.cosine_similarity(emb_a,emb_b,dim=-1)
+                
 
 # Load a pretrained S-HuBERT model
 
 from SentHuBERT import SentHuBERT
 
 model = SentHuBERT.from_pretrained('charsiu/S-HuBERT-from-simcse-sup-roberta')
+model.eval()
+
+with torch.no_grad():
+    emb_a = model(speech_a).last_hidden_state
+    emb_b = model(speech_b).last_hidden_state
+    
+similarity = F.cosine_similarity(emb_a,emb_b,dim=-1)
 ```
 
 #### Hidden unit models
