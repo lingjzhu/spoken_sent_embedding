@@ -6,8 +6,13 @@ Inducing semantic representations directly from speech signals is a highly chall
 
 
 ### Usage
+Load pretrained models
+```
+from WavEmbed import WavEmbedModel
 
-Coming soon.
+model = WavEmbedModel.from_pretrained("charsiu/WavEmbed_100")
+
+```
 
 ### Pretrained checkpoints  
   Selected pretrained models can be found [here](https://huggingface.co/charsiu).  
